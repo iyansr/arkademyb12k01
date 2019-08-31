@@ -43,3 +43,11 @@ Soal ke-3 berbentuk html, diharapkan agar membuka console browser.
 
 - **Final Query**
   ![desc](https://raw.githubusercontent.com/iyansr/arkademyb12k01/master/img/final_query.png 'Final')
+
+### Soal 6B
+
+_Ralat commit 'Soal 6A Img' Seharusnya 'Soal 6B Img'_ 🙇
+![Read](https://raw.githubusercontent.com/iyansr/arkademyb12k01/master/img/read.png 'Read')
+![Add](https://raw.githubusercontent.com/iyansr/arkademyb12k01/master/img/add.png 'Add')
+![Delete](https://raw.githubusercontent.com/iyansr/arkademyb12k01/master/img/delete.png 'Delete')
+![Delete](https://raw.githubusercontent.com/iyansr/arkademyb12k01/master/img/update.png 'Update')
