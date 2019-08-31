@@ -20,3 +20,13 @@ console.log(usernameValidation('1997IyanSR')); //False
 console.log(passwordValidation('iyansR0rrrr=')); //True
 console.log(passwordValidation('IyanSR123!#')); //False
 ```
+
+### Soal 3
+
+Soal ke-3 berbentuk html, diharapkan agar membuka console browser.
+
+### Soal 4
+
+### Soal 5
+
+### Soal 6
