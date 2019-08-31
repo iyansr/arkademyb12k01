@@ -29,4 +29,17 @@ Soal ke-3 berbentuk html, diharapkan agar membuka console browser.
 
 ### Soal 5
 
-### Soal 6
+### Soal 6A
+
+- **Create**
+  ![create](https://raw.githubusercontent.com/iyansr/arkademyb12k01/master/img/create_table.png 'Create Table')
+
+- **Desc Table**
+  ![desc](https://raw.githubusercontent.com/iyansr/arkademyb12k01/master/img/desc_table.png 'Desc Table')
+
+- **Insert & Select**
+  ![desc](https://raw.githubusercontent.com/iyansr/arkademyb12k01/master/img/insert_select.png 'Insert Select')
+  ![desc](https://raw.githubusercontent.com/iyansr/arkademyb12k01/master/img/insert_select1.png 'Insert Select')
+
+- **Final Query**
+  ![desc](https://raw.githubusercontent.com/iyansr/arkademyb12k01/master/img/final_query.png 'Final')
