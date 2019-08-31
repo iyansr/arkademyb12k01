@@ -121,23 +121,66 @@
           <td data-id="nama<?= $salary_id ?>"><?= $n['work'] ?></td>
           <td data-id="nama<?= $work_id ?>"><?= $n['salary'] ?></td>
           <td>
-            <a href="#" data-toggle="modal" data-target="#deleteModal">
-              <i class="material-icons text-danger">
+            <a data-pid="<?= $id ?>" href="#" data-toggle="modal" data-target="#deleteModal">
+              <i class="material-icons text-danger btnDel">
                 delete_outline
               </i>
             </a>
-            <a href="#">
-              <i class="material-icons text-success" data-toggle="modal" data-target="#editModal">
+            <a data-pid="<?= $id ?>" href="#">
+              <i class="material-icons text-success" data-toggle="modal" id="editBtn" data-target="#editModal">
                 edit
               </i>
             </a>
           </td>
         </tr>
+
+
       <?php } ?>
         
       </tbody>
     </table>
     <!-- table end -->
+
+
+                <!-- edit Modal start -->
+    <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModal" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="editModal">Edit</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+          <form>
+            <div class="modal-body">
+              <div class="form-group">
+                <input type="text" name="nama" id="editNama" class="form-control" placeholder="Name">
+              </div>
+              <div class="form-group">
+                <select class="custom-select" id="editWorkSelect">
+                  <option selected>Work</option>
+                  <option value="1">Frontend Dev</option>
+                  <option value="2">Backend Dev</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <select class="custom-select" id="editSalarySelect">
+                  <option selected>Salary</option>
+                  <option value="1">10.000.000</option>
+                  <option value="2">12.000.000</option>
+                </select>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-warning btnEdit">Edit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- edit modal end -->
 
     <!-- Modal start -->
     <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModal"
@@ -160,45 +203,7 @@
       <!-- modla end -->
     </div>
 
-    <!-- edit Modal start -->
-    <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModal" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="editModal">Edit</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
 
-          <form>
-            <div class="modal-body">
-              <div class="form-group">
-                <input type="text" name="nama" id="nama" class="form-control" placeholder="Name">
-              </div>
-              <div class="form-group">
-                <select class="custom-select" id="inputGroupSelect01">
-                  <option selected>Work</option>
-                  <option value="1">Frontend Dev</option>
-                  <option value="2">Backend Dev</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <select class="custom-select" id="inputGroupSelect01">
-                  <option selected>Salary</option>
-                  <option value="1">10.000.000</option>
-                  <option value="2">12.000.000</option>
-                </select>
-              </div>
-            </div>
-            <div class="modal-footer">
-              <button type="submit" class="btn btn-warning">Edit</button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-    <!-- edit modal end -->
 
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -211,14 +216,17 @@
 
     <script>
     $(function(){
+
+      //Create
       $(document).on('click', '.addData', ()=>{
         let name = $('#nama').val();
         let id_salary = $('#salarySelect').val();
         let id_work = $('#workSelect').val();
 
         if(name != ''){
+          let link = 'lib/add_data.php';
             $.ajax({
-            url: 'lib/add_data.php',
+            url: link,
             type: 'post',
             cache: false,
             dataType: "json",
@@ -236,10 +244,48 @@
           });
         }
       });
+
+
+      //Update
+      $(document).on('click', '.btnEdit', ()=>{
+        let name = $('#editNama').val();
+        let id_salary = $('#editWorkSelect').val();
+        let id_work = $('#editSalarySelect').val();
+
+        if(name != ''){
+          let link = 'lib/update_data.php';
+            $.ajax({
+            url: link,
+            type: 'post',
+            cache: false,
+            dataType: "json",
+            data: {
+              nama: name,
+              id_salary : id_salary,
+              id_work : id_work
+            },
+            success: (res)=>{
+              console.log(res)
+							location.reload();
+            },
+            error: (err)=>{
+              console.log(err)
+            }
+          });
+        }
+      });
+
+      //Update
+      $(document).on('click', '.btnDel', ()=>{
+        let id = $(this).data('pid');
+
+        $.post('lib/delete_data.php', {id: id});
+      });
+
     });
     
-
     </script>
+
 
 
 
