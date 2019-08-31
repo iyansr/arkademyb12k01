@@ -50,4 +50,13 @@ _Ralat commit 'Soal 6A Img' Seharusnya 'Soal 6B Img'_ 🙇
 ![Read](https://raw.githubusercontent.com/iyansr/arkademyb12k01/master/img/read.png 'Read')
 ![Add](https://raw.githubusercontent.com/iyansr/arkademyb12k01/master/img/add.png 'Add')
 ![Delete](https://raw.githubusercontent.com/iyansr/arkademyb12k01/master/img/delete.png 'Delete')
-![Delete](https://raw.githubusercontent.com/iyansr/arkademyb12k01/master/img/update.png 'Update')
+![Update](https://raw.githubusercontent.com/iyansr/arkademyb12k01/master/img/update.png 'Update')
+
+### Soal 6C
+
+**File Berbentuk PHP**
+Configurasi Awal:
+
+- Database: MySQL
+- Database Name: arkademy
+- Import Table: soal6/arkademy.mysql
